@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -41,10 +42,18 @@ fun MainComp() {
 fun FilledButtonExample() {
     val mContext = LocalContext.current
     val mMediaPlayer = MediaPlayer.create(mContext, R.raw.bc)
+    Row {
+
     Button(onClick = {
         mMediaPlayer.start()
     }) {
-        Text(text = "BodyScan")
+        Text(text = "BodyScanStart")
+    }
+    Button(onClick = {
+        mMediaPlayer.pause()
+    }) {
+        Text(text = "BodyScanPause")
+    }
     }
 }
 

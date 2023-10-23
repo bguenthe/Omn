@@ -41,22 +41,35 @@ fun MainComp() {
 @Composable
 fun FilledButtonExample() {
     val mContext = LocalContext.current
-    val mMediaPlayer = MediaPlayer.create(mContext, R.raw.bc)
-    Row {
-
-    Button(onClick = {
-        mMediaPlayer.start()
-    }) {
-        Text(text = "BodyScanStart")
-    }
-    Button(onClick = {
-        mMediaPlayer.pause()
-    }) {
-        Text(text = "BodyScanPause")
-    }
+    val bodyscan = MediaPlayer.create(mContext, R.raw.bc)
+    val meditation15m = MediaPlayer.create(mContext, R.raw.med15)
+    Column {
+        Row {
+            Button(onClick = {
+                bodyscan.start()
+            }) {
+                Text(text = "BodyScanStart")
+            }
+            Button(onClick = {
+                bodyscan.pause()
+            }) {
+                Text(text = "BodyScanPause")
+            }
+        }
+        Row {
+            Button(onClick = {
+                meditation15m.start()
+            }) {
+                Text(text = "BodyScanStart")
+            }
+            Button(onClick = {
+                meditation15m.pause()
+            }) {
+                Text(text = "BodyScanPause")
+            }
+        }
     }
 }
-
 
 @Preview(showBackground = true)
 @Composable

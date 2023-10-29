@@ -3,6 +3,7 @@ package com.example.omn
 import android.annotation.SuppressLint
 import android.media.MediaPlayer
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
@@ -58,8 +59,9 @@ fun FilledButtonExample() {
         }
         Row {
             Button(onClick = {
-                meditation15m.start()
-            }) {
+                meditation15m.pause()
+            })
+            {
                 Text(text = "BodyScanStart")
             }
             Button(onClick = {

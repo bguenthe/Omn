@@ -56,18 +56,30 @@ fun FilledButtonExample() {
             }) {
                 Text(text = "BodyScanPause")
             }
+            Button(onClick = {
+                bodyscan.stop()
+                bodyscan.prepare()
+            }) {
+                Text(text = "BodyScanStop")
+            }
         }
         Row {
             Button(onClick = {
-                meditation15m.pause()
+                meditation15m.start()
             })
             {
-                Text(text = "BodyScanStart")
+                Text(text = "Medi15minStart")
             }
             Button(onClick = {
                 meditation15m.pause()
             }) {
-                Text(text = "BodyScanPause")
+                Text(text = "Medi15minPause")
+            }
+            Button(onClick = {
+                meditation15m.stop()
+                meditation15m.prepare()
+            }) {
+                Text(text = "Medi15minStop")
             }
         }
     }
